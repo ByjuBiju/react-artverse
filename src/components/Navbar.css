@@ -1,0 +1,142 @@
+.cart-btn {
+  position: relative;
+}
+
+.cart-count {
+  background: #ffc400;
+  color: #000;
+  font-size: 11px;
+  font-weight: bold;
+  border-radius: 50%;
+  padding: 2px 6px;
+  margin-left: 6px;
+}
+
+
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 8%;
+  background: #ffffff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+.navbar-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 1.5px;
+  color: #515050;
+  font-weight: 500;
+}
+
+.navbar-links a:hover {
+  color: #040404;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-weight: 400;
+  transition: 0.3s;
+}
+
+.nav-link.active {
+  font-weight: 800;      
+   color: #000000;
+}
+
+.cart-btn {
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 12px 22px;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 24px;
+  height: 3px;
+  background: #000;
+  border-radius: 2px;
+}
+
+.cart-btn:hover {
+  background: #ffc400;
+  color: #000;
+}
+
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+
+  .navbar {
+    justify-content: flex-start;
+  }
+
+  /* HAMBURGER ON LEFT */
+  .hamburger {
+    display: flex;
+  }
+
+  /* LOGO AFTER HAMBURGER */
+  .navbar-logo {
+    margin-right: auto;
+  }
+
+  .navbar-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding: 30px 0;
+    display: none;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  }
+
+  .navbar-links.active {
+    display: flex;
+  }
+
+  .navbar-links a {
+    font-size: 16px;
+  }
+
+  .cart-btn {
+    width: 90%;
+    justify-content: center;
+  }
+}
+

@@ -1,0 +1,140 @@
+.contact-section {
+  padding: 120px 8%;
+  background: #fff;
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  align-items: flex-start;
+}
+
+.contact-tag {
+  font-size: 12px;
+  letter-spacing: 3px;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.contact-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 100px;
+  line-height: 1.05;
+  font-weight: 900;
+  margin-bottom: 30px;
+}
+
+.contact-title span {
+  color: #ffc400; 
+}
+
+.contact-desc {
+  font-size: 16px;
+  color: #555;
+  max-width: 420px;
+  line-height: 1.7;
+}
+
+/* RIGHT FORM */
+.contact-form {
+  width: 100%;
+}
+
+.form-group {
+  margin-bottom: 40px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  color: #111;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  padding: 12px 0;
+  font-size: 15px;
+  outline: none;
+  background: transparent;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #000;
+}
+
+.contact-btn {
+  background: #111;
+  color: #fff;
+  padding: 14px 32px;
+  border: none;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-btn:hover {
+  color: #000;
+  background: #ffc400; 
+}
+
+
+
+
+@media (max-width: 768px) {
+
+  .contact-section {
+    padding: 80px 6%;
+  }
+
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  /* LEFT CONTENT */
+  .contact-tag {
+    font-size: 11px;
+    margin-bottom: 8px;
+  }
+
+  .contact-title {
+    font-size: 64px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+  }
+
+  .contact-desc {
+    max-width: 100%;
+    font-size: 15px;
+  }
+
+  /* FORM */
+  .form-group {
+    margin-bottom: 32px;
+  }
+
+  .form-group label {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 14px;
+    padding: 10px 0;
+  }
+
+  .contact-btn {
+    width: 100%;
+    padding: 14px 0;
+    font-size: 13px;
+    text-align: center;
+  }
+}

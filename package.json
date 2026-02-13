@@ -1,11 +1,12 @@
 {
-  "homepage": "https://ByjuBiju.github.io/Artverse",
-  "name": "react-app",
+  "homepage": "https://ByjuBiju.github.io/ArtverseWebsite",
+  "name": "artverse-website",
+  "version": "0.1.0",
   "private": true,
-  "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "start": "react-scripts start",
     "build": "vite build",
     "preview": "vite preview",
     "predeploy": "npm run build",

@@ -120,7 +120,7 @@
     background: #ffffff;
     flex-direction: column;
     align-items: center;
-    gap: 24px;
+    gap: 12px;
     padding: 30px 0;
     display: none;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
@@ -131,12 +131,13 @@
   }
 
   .navbar-links a {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   .cart-btn {
     width: 90%;
     justify-content: center;
+    font-size: 14px;
   }
 }
 

@@ -1,0 +1,86 @@
+/* Section */
+.commission-section {
+    background: #ffffff;
+    padding: 100px 80px;
+    text-align: center;
+  }
+  
+  /* Tag */
+  .commission-tag {
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: #777;
+    margin-bottom: 20px;
+  }
+  
+  /* Title */
+  .commission-title {
+    font-family: "Playfair Display", serif;
+    font-size: 48px;
+    margin-bottom: 70px;
+    color: #111;
+  }
+  
+  /* Horizontal Scroll Container */
+  .commission-cards {
+    display: flex;              /* IMPORTANT */
+    gap: 40px;
+    overflow-x: auto;           /* Enables scroll */
+    scroll-behavior: smooth;
+    padding-bottom: 30px;
+  }
+  
+  /* Hide Scrollbar (Optional Clean Look) */
+  .commission-cards::-webkit-scrollbar {
+    display: none;
+  }
+  .commission-cards {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+ /* Card */
+.commission-card {
+    width: 85vw;              /* Responsive width based on screen */
+    max-width: 350px;         /* Desktop limit */
+    flex-shrink: 0;
+    background: #f7f6f2;
+    border: 1px solid #e2e2e2;
+  }
+  
+  /* Image */
+  .commission-img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;      /* Keep portrait shape */
+    object-fit: cover;
+    display: block;
+  }
+  
+  
+  /* Mobile */
+  @media (max-width: 768px) {
+
+    .commission-section {
+      padding: 60px 20px;
+    }
+  
+    .commission-title {
+      font-size: 28px;
+    }
+  
+    .commission-cards {
+      gap: 20px;
+    }
+  
+    .commission-card {
+        min-width: 85%;
+      }
+  
+    .commission-img {
+      aspect-ratio: 6 / 6;
+      height: auto;        /* Remove fixed height */
+    }
+  }
+  
+  

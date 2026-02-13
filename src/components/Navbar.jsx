@@ -8,7 +8,17 @@ const Navbar = ({ cartCount }) => {
 
   return (
     <nav className="navbar">
-      <div className="navbar-logo">ARTVERSE</div>
+      <div
+  className="navbar-logo"
+  onClick={() => {
+    setOpen(false);
+    navigate("/");
+  }}
+  style={{ cursor: "pointer" }}
+>
+  ARTVERSE
+</div>
+
 
       <div className="hamburger" onClick={() => setOpen(!open)}>
         <span></span>

@@ -1,5 +1,6 @@
 import Abone from "./Abone";
 import CreativeProcess from "./CreativeProcess";
+import CommissionProcess from "./CommissionProcess";
 import Footer from "./Footer";
 
 const About = () => {
@@ -7,6 +8,7 @@ const About = () => {
     <>
       <Abone />
       <CreativeProcess />
+      <CommissionProcess />
       <Footer />
     </>
   );

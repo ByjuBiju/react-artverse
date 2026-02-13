@@ -1,7 +1,38 @@
 import "./CartItems.css";
+import { useNavigate } from "react-router-dom";
 
 const CartItems = ({ cartItems, removeFromCart }) => {
+  const navigate = useNavigate(); // ✅ Correctly inside the component
+
   const subtotal = cartItems.reduce((sum, item) => sum + item.price, 0);
+
+  const handleCheckout = async () => {
+    try {
+      if (cartItems.length === 0) {
+        alert("Your cart is empty!");
+        return;
+      }
+
+      const response = await fetch("http://localhost:5000/create-checkout-session", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ cartItems }),
+      });
+
+      const data = await response.json();
+
+      if (data.url) {
+        window.location.href = data.url; // ✅ Redirect to Stripe
+      } else {
+        alert("Something went wrong!");
+      }
+    } catch (error) {
+      console.error("Checkout error:", error);
+      alert("Checkout failed!");
+    }
+  };
 
   return (
     <section className="cart-page">
@@ -25,10 +56,7 @@ const CartItems = ({ cartItems, removeFromCart }) => {
                   className="delete-btn"
                   onClick={() => removeFromCart(index)}
                 >
-                  <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-  <path fill-rule="evenodd" d="M8.586 2.586A2 2 0 0 1 10 2h4a2 2 0 0 1 2 2v2h3a1 1 0 1 1 0 2v12a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V8a1 1 0 0 1 0-2h3V4a2 2 0 0 1 .586-1.414ZM10 6h4V4h-4v2Zm1 4a1 1 0 1 0-2 0v8a1 1 0 1 0 2 0v-8Zm4 0a1 1 0 1 0-2 0v8a1 1 0 1 0 2 0v-8Z" clip-rule="evenodd"/>
-</svg>
-
+                  <i className="bi bi-trash"></i>
                 </button>
 
                 <p className="total">₹ {item.price}.00</p>
@@ -58,11 +86,18 @@ const CartItems = ({ cartItems, removeFromCart }) => {
             <span>₹ {subtotal}.00</span>
           </div>
 
-          <button className="checkout-btn">
+          <button className="checkout-btn" onClick={handleCheckout}>
             PROCEED TO CHECKOUT →
           </button>
 
-          <p className="continue">CONTINUE SHOPPING</p>
+          {/* CONTINUE SHOPPING */}
+          <p
+            className="continue"
+            onClick={() => navigate("/shop")} // Navigate to shop page
+            style={{ cursor: "pointer" }}
+          >
+            CONTINUE SHOPPING
+          </p>
         </div>
       </div>
     </section>

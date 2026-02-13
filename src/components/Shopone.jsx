@@ -8,7 +8,7 @@ import art3 from "./images/Spider with frame.png";
 import art4 from "./images/car with frame.png";
 import art5 from "./images/Shiva with frame.png";
 import art6 from "./images/walterwhite with frame.png";
-import art7 from "./images/anime with frame.png";
+import art7 from "./images/ani.png";
 
 const artworks = [
   {

@@ -1,18 +1,29 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Shopone from "./components/Shopone";
-import Shop from "./components/Shop";
 import Paint from "./components/Paint";
 import Sket from "./components/Sket";
 import ScrollToTop from "./components/ScrollToTop";
 import Cart from "./components/Cart";
+import Success from "./components/Success";
+import Cancel from "./components/Cancel";
 
 function App() {
- const [cartItems, setCartItems] = useState([]);
+  // ✅ Load cart from localStorage when app starts
+  const [cartItems, setCartItems] = useState(() => {
+    const savedCart = localStorage.getItem("cartItems");
+    return savedCart ? JSON.parse(savedCart) : [];
+  });
+
+  // ✅ Save cart to localStorage whenever it changes
+  useEffect(() => {
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  }, [cartItems]);
 
   const addToCart = (item) => {
     setCartItems((prev) => [...prev, item]);
@@ -23,34 +34,40 @@ function App() {
   };
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/react-artverse">
       <ScrollToTop />
       <Navbar cartCount={cartItems.length} />
 
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-<Route
-  path="/shop"
-  element={<Shopone addToCart={addToCart} />}
-/>
-
-<Route
-  path="/cart"
-  element={
-    <Cart
-      cartItems={cartItems}
-      removeFromCart={removeFromCart}
-    />
-  }
-/>
-
-
         <Route path="/contact" element={<Contact />} />
+
+        {/* SHOP */}
+        <Route
+          path="/shop"
+          element={<Shopone addToCart={addToCart} />}
+        />
+
+        {/* CART */}
+        <Route
+          path="/cart"
+          element={
+            <Cart
+              cartItems={cartItems}
+              removeFromCart={removeFromCart}
+            />
+          }
+        />
+
+        {/* STRIPE REDIRECT ROUTES */}
+        <Route path="/success" element={<Success />} />
+        <Route path="/cancel" element={<Cancel />} />
+
         <Route path="/paint" element={<Paint />} />
         <Route path="/sket" element={<Sket />} />
-        <Route path="/shop" element={<Shop />} />
 
+        {/* Redirect unknown routes */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>

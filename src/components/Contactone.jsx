@@ -16,7 +16,7 @@ Email: ${email}
 Message:
 ${message}`;
 
-    const gmailURL = `https://mail.google.com/mail/?view=cm&fs=1&to=yourmail@gmail.com&su=${encodeURIComponent(
+    const gmailURL = `https://mail.google.com/mail/?view=cm&fs=1&to=artverse38@gmail.com&su=${encodeURIComponent(
       subject
     )}&body=${encodeURIComponent(body)}`;
 

@@ -5,34 +5,62 @@ const CartItems = ({ cartItems, removeFromCart }) => {
   const navigate = useNavigate(); // ✅ Correctly inside the component
 
   const subtotal = cartItems.reduce((sum, item) => sum + item.price, 0);
-
   const handleCheckout = async () => {
     try {
       if (cartItems.length === 0) {
         alert("Your cart is empty!");
         return;
       }
-
-      const response = await fetch("http://localhost:5000/create-checkout-session", {
+  
+      // 🔹 Call backend to create Razorpay order
+      const response = await fetch("http://localhost:5000/create-order", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ cartItems }),
       });
-
+  
       const data = await response.json();
-
-      if (data.url) {
-        window.location.href = data.url; // ✅ Redirect to Stripe
-      } else {
-        alert("Something went wrong!");
+  
+      if (!data.orderId) {
+        alert("Order creation failed!");
+        return;
       }
+  
+      const options = {
+        key: data.key,
+        amount: data.amount,
+        currency: data.currency,
+        name: "Artverse",
+        description: "Purchase from Artverse",
+        order_id: data.orderId,
+  
+        handler: function (response) {
+          alert("Payment Successful 🎉");
+          console.log("Payment Response:", response);
+        },
+  
+        prefill: {
+          name: "Byju",
+          email: "byju@example.com",
+          contact: "9999999999",
+        },
+  
+        theme: {
+          color: "#000000",
+        },
+      };
+  
+      const rzp = new window.Razorpay(options);
+      rzp.open();
+  
     } catch (error) {
       console.error("Checkout error:", error);
       alert("Checkout failed!");
     }
   };
+  
 
   return (
     <section className="cart-page">

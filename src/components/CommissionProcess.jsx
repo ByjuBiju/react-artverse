@@ -1,4 +1,5 @@
 import "./CommissionProcess.css";
+import { useRef } from "react";
 
 import img1 from "./images/couple.png";
 import img2 from "./images/frnds.png";
@@ -19,12 +20,30 @@ const commissions = [
 ];
 
 const CommissionProcess = () => {
+  const scrollRef = useRef(null);
+
+  const scrollRight = () => {
+    scrollRef.current.scrollBy({
+      left: 300,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <section className="commission-section">
       <p className="commission-tag">COMMISSION WORKS</p>
-      <h2 className="commission-title">Bringing Your Vision to Life</h2>
 
-      <div className="commission-cards">
+      <div className="title-wrapper">
+        <h2 className="commission-title">
+          Bringing Your Vision to Life
+        </h2>
+
+        <button className="scroll-btn" onClick={scrollRight}>
+          →
+        </button>
+      </div>
+
+      <div className="commission-cards" ref={scrollRef}>
         {commissions.map((item, index) => (
           <div className="commission-card" key={index}>
             <img

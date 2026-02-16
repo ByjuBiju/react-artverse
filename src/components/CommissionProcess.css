@@ -57,6 +57,26 @@
     display: block;
   }
   
+
+
+  .title-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .commission-title {
+    text-align: center;
+  }
+  
+  .scroll-btn {
+    position: absolute;
+    right: 0;
+    font-size: 22px;
+    padding: 8px 14px;
+  }
+  
   
   /* Mobile */
   @media (max-width: 768px) {
@@ -81,6 +101,19 @@
       aspect-ratio: 6 / 6;
       height: auto;        /* Remove fixed height */
     }
+
+    .title-wrapper {
+      flex-direction: column;   /* stack items */
+      gap: 15px;
+    }
+  
+    .scroll-btn {
+      position: static;         /* remove absolute */
+      margin-top: -75px;
+      padding: 6px 10px;
+      margin-bottom: 10px;
+    }
+   
   }
   
   

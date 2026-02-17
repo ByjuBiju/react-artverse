@@ -1,18 +1,27 @@
 require("dotenv").config();
+
 const express = require("express");
 const cors = require("cors");
 const Razorpay = require("razorpay");
 
 const app = express();
 
+// Middleware
 app.use(cors());
 app.use(express.json());
 
+// Razorpay instance
 const razorpay = new Razorpay({
   key_id: process.env.RAZORPAY_KEY_ID,
   key_secret: process.env.RAZORPAY_KEY_SECRET,
 });
 
+// Test route (important for checking Render deployment)
+app.get("/", (req, res) => {
+  res.send("Artverse Backend is running 🚀");
+});
+
+// Create Order Route
 app.post("/create-order", async (req, res) => {
   try {
     const { cartItems } = req.body;
@@ -27,7 +36,7 @@ app.post("/create-order", async (req, res) => {
     );
 
     const options = {
-      amount: totalAmount * 100, // paise
+      amount: totalAmount * 100, // convert to paise
       currency: "INR",
       receipt: "receipt_order_" + Date.now(),
     };
@@ -46,6 +55,9 @@ app.post("/create-order", async (req, res) => {
   }
 });
 
-app.listen(5000, () => {
-  console.log("Server running on port 5000");
+// ✅ IMPORTANT FIX FOR RENDER
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });

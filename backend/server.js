@@ -19,36 +19,21 @@ const razorpay = new Razorpay({
 
 app.post("/create-order", async (req, res) => {
   try {
-    const { cartItems } = req.body;
+    const { amount } = req.body;
 
-    if (!cartItems || cartItems.length === 0) {
-      return res.status(400).json({ error: "Cart is empty" });
-    }
-
-    const totalAmount = cartItems.reduce(
-      (sum, item) => sum + item.price,
-      0
-    );
-
-    const options = {
-      amount: totalAmount * 100, // paise
+    const order = await razorpay.orders.create({
+      amount: amount * 100, // VERY IMPORTANT
       currency: "INR",
-      receipt: "receipt_order_" + Date.now(),
-    };
-
-    const order = await razorpay.orders.create(options);
-
-    res.json({
-      orderId: order.id,
-      amount: order.amount,
-      currency: order.currency,
-      key: process.env.RAZORPAY_KEY_ID,
+      receipt: "receipt_" + Date.now(),
     });
-  } catch (error) {
-    console.error("Razorpay Error:", error);
-    res.status(500).json({ error: error.message });
+
+    res.json(order);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Order creation failed" });
   }
 });
+
 
 app.listen(5000, () => {
   console.log("Server running on port 5000");

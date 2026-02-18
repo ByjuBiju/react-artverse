@@ -13,7 +13,7 @@ const CartItems = ({ cartItems, removeFromCart }) => {
       }
   
       // 🔹 Call backend to create Razorpay order
-      const response = await fetch("http://localhost:5000/create-order", {
+      const response = await fetch("http://react-artverse.onrender.com/create-order", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

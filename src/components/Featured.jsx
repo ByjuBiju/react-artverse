@@ -1,7 +1,7 @@
 import "./Featured.css";
 import art3 from "./images/Spider with frame.png";
 import art6 from "./images/walterwhite with frame.png";
-import art7 from "./images/anime with frame.png";
+import art7 from "./images/ani.png";
 import { Link } from "react-router-dom";
 
 const Featured = () => {

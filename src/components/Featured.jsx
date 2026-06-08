@@ -1,16 +1,16 @@
 import "./Featured.css";
 import art3 from "./images/Spider with frame.png";
-import art6 from "./images/walterwhite with frame.png";
-import art7 from "./images/anime with frame.png";
+import art6 from "./images/spa.jpg";
+import art7 from "./images/ani.png";
 import { Link } from "react-router-dom";
 
 const Featured = () => {
   return (
     <section className="featured">
-      <div className="featured-header">
+      <div className="featured-header"> 
         <div>
           <p className="featured-tag">SELECTED WORKS</p>
-          <h2 className="featured-title">Featured Pieces</h2>
+          <h2 className="featured-title">Featured Pieces</h2> 
         </div>
 
  
@@ -29,7 +29,7 @@ const Featured = () => {
 
         <div className="featured-card">
           <img src={art6} alt="Midnight Blue" />
-          <h3>Walter White</h3>
+          <h3>Astronaut in Space</h3>
         </div>
 
         <div className="featured-card">

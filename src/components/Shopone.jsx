@@ -9,19 +9,22 @@ import art4 from "./images/car with frame.png";
 import art5 from "./images/Shiva with frame.png";
 import art6 from "./images/walterwhite with frame.png";
 import art7 from "./images/ani.png";
+import art8 from "./images/monk.png";
+import art9 from "./images/spa.jpg";
+import art10 from "./images/kpop.jpg";
+import art11 from "./images/ani.jpg";
 
 const artworks = [
   {
-    img: art1,
-    type: "PAINTING",
-    title: "Deadpool Art",
-    price: 1000,
-    desc: "21.0 cm x 29.7 cm",
-    small: true
+    img: art9,
+    type: "SKETCH",
+    title: "Astronaut in Space",
+    price: 4000,
+    desc: "35.0 cm x 45.0 cm"
   },
   {
     img: art2,
-    type: "SKETCH",
+    type: "SKETCH", 
     title: "Krishna",
     price: 2000,
     desc: "29.7 cm x 42 cm"
@@ -30,6 +33,13 @@ const artworks = [
     img: art3,
     type: "SKETCH",
     title: "Spiderman & Venom",
+    price: 1000,
+    desc: "21.0 cm x 29.7 cm"
+  },
+  {
+    img: art10,
+    type: "SKETCH",
+    title: "Kim Tae-hyung",
     price: 1000,
     desc: "21.0 cm x 29.7 cm"
   },
@@ -60,6 +70,28 @@ const artworks = [
     title: "Jujutsu Kaisen",
     price: 1500,
     desc: "21.0 cm x 29.7 cm"
+  },
+  {
+    img: art8,
+    type: "SKETCH",
+    title: "Punch Monkey",
+    price: 1500,
+    desc: "21.0 cm x 29.7 cm"
+  },
+  {
+    img: art11,
+    type: "SKETCH",
+    title: "Anirudh",
+    price: 1000,
+    desc: "21.0 cm x 29.7 cm"
+  },
+  {
+    img: art1,
+    type: "PAINTING",
+    title: "Deadpool Art",
+    price: 1000,
+    desc: "21.0 cm x 29.7 cm",
+    small: true
   }
 ];
 

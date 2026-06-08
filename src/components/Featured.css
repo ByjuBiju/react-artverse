@@ -1,5 +1,5 @@
 .featured {
-  padding: 60px 8%;
+  padding: 10px 8%;
   background-color: #ffffff;
 }
 
@@ -14,7 +14,7 @@
   font-size: 13px;
   letter-spacing: 2px;
   color: #777;
-  margin-bottom: -30px;
+  margin-bottom: -20px;
 }
 
 .featured-title {
@@ -71,7 +71,7 @@
 /* Responsive */
 @media (max-width: 768px) {
   .featured {
-    padding: 60px 6%;
+    padding: 0px 6%;
   }
 
   .featured-header {

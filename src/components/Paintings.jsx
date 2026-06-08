@@ -2,8 +2,7 @@ import "./Paintings.css";
 import { useNavigate } from "react-router-dom";
 
 import art1 from "./images/deadpool.jpg";
-import art2 from "./images/ewye.jpg";
-import art3 from "./images/ewye.jpg";
+import art3 from "./images/Spider with frame.png";
 
 const artworks = [
   {
@@ -15,18 +14,11 @@ const artworks = [
     small: true 
   },
   {
-    img: art2,
-    type: "SKETCH",
-    title: "Eye Sketch",
-    price: 380,
-    desc: "Fine pencil strokes capturing expressive emotions."
-  },
-  {
     img: art3,
     type: "SKETCH",
-    title: "Abstract Eye",
-    price: 450,
-    desc: "Detailed eye sketch with artistic shading."
+    title: "Spiderman & Venom",
+    price: 1000,
+    desc: "21.0 cm x 29.7 cm"
   }
 ];
 

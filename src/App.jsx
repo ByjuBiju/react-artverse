@@ -14,13 +14,13 @@ import Success from "./components/Success";
 import Cancel from "./components/Cancel";
 
 function App() {
-  // ✅ Load cart from localStorage when app starts
+  // Load cart from localStorage when app starts
   const [cartItems, setCartItems] = useState(() => {
     const savedCart = localStorage.getItem("cartItems");
     return savedCart ? JSON.parse(savedCart) : [];
   });
 
-  // ✅ Save cart to localStorage whenever it changes
+  //  Save cart to localStorage whenever it changes
   useEffect(() => {
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
   }, [cartItems]);
@@ -43,7 +43,6 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
 
-        {/* SHOP */}
         <Route
           path="/shop"
           element={<Shopone addToCart={addToCart} />}

@@ -1,29 +1,19 @@
-import "./CommissionProcess.css";
+import "./Trending.css";
 import { useRef } from "react";
 
-import img1 from "./images/couple.png";
-import img2 from "./images/frnds.png";
-import img3 from "./images/frin.png";
-import img4 from "./images/fam.png";
-import img8 from "./images/comm.jpg";
-import img5 from "./images/emee.png";
-import img6 from "./images/par.png";
-import img7 from "./images/actt.png";
-import img9 from "./images/by.jpg";
+import img1 from "./images/surya.jpg";
+import img8 from "./images/com.png";
+import img2 from "./images/sita.png";
+import img3 from "./images/maveeran.jpg";
 
 const commissions = [
-  { img: img9 },
   { img: img1 },
   { img: img2 },
   { img: img3 },
-  { img: img4 },
   { img: img8 },
-  { img: img5 },
-  { img: img6 },
-  { img: img7 }
 ];
 
-const CommissionProcess = () => {
+const Trending= () => {
   const scrollRef = useRef(null);
 
   const scrollRight = () => {
@@ -35,11 +25,11 @@ const CommissionProcess = () => {
 
   return (
     <section className="commission-section">
-      <p className="commission-tag">COMMISSION WORKS</p>
+      <p className="commission-tag">WORKS</p>
 
       <div className="title-wrapper">
         <h2 className="commission-title">
-          Bringing Your Vision to Life
+          Trending Now
         </h2>
 
         <button className="scroll-btn" onClick={scrollRight}>
@@ -62,4 +52,4 @@ const CommissionProcess = () => {
   );
 };
 
-export default CommissionProcess;
+export default Trending;

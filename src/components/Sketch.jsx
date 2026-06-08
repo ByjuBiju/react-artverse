@@ -2,13 +2,24 @@ import "./Sketch.css";
 import { useNavigate } from "react-router-dom";
 
 import art2 from "./images/Krishna with frame.png";
-import art3 from "./images/Spider with frame.png";
 import art4 from "./images/car with frame.png";
 import art5 from "./images/Shiva with frame.png";
 import art6 from "./images/walterwhite with frame.png";
 import art7 from "./images/ani.png";
+import art8 from "./images/monk.png";
+import art9 from "./images/spa.jpg";
+import art11 from "./images/ani.jpg";
+import art10 from "./images/kpop.jpg";
+
 
 const artworks = [
+  {
+    img: art9,
+    type: "SKETCH",
+    title: "Astronaut in Space",
+    price: 4000,
+    desc: "35.0 cm x 45.0 cm"
+  },
   {
     img: art2,
     type: "SKETCH",
@@ -17,9 +28,44 @@ const artworks = [
     desc: "29.7 cm x 42 cm"
   },
   {
-    img: art3,
+    img: art5,
     type: "SKETCH",
-    title: "Spiderman & Venom",
+    title: "Shiva",
+    price: 1500,
+    desc: "21.0 cm x 29.7 cm"
+  },
+  {
+    img: art6,
+    type: "SKETCH",
+    title: "Walter White",
+    price: 1500,
+    desc: "21.0 cm x 29.7 cm"
+  },
+    {
+    img: art7,
+    type: "SKETCH",
+    title: "Jujutsu Kaisen",
+    price: 1500,
+    desc: "21.0 cm x 29.7 cm"
+  },
+  {
+    img: art8,
+    type: "SKETCH",
+    title: "Punch Monkey",
+    price: 1500,
+    desc: "21.0 cm x 29.7 cm"
+  },
+  {
+    img: art10,
+    type: "SKETCH",
+    title: "Kim Tae-hyung",
+    price: 1000,
+    desc: "21.0 cm x 29.7 cm"
+  },
+  {
+    img: art11,
+    type: "SKETCH",
+    title: "Anirudh",
     price: 1000,
     desc: "21.0 cm x 29.7 cm"
   },
@@ -29,28 +75,7 @@ const artworks = [
     title: "Car",
     price: 1000,
     desc: "21.0 cm x 29.7 cm"
-  },
-   {
-    img: art5,
-    type: "SKETCH",
-    title: "Shiva",
-    price: 1500,
-    desc: "21.0 cm x 29.7 cm"
-  },
-  {
-        img: art6,
-        type: "SKETCH",
-        title: "Walter White",
-        price: 1500,
-        desc: "21.0 cm x 29.7 cm"
-      },
-        {
-        img: art7,
-        type: "SKETCH",
-        title: "Jujutsu Kaisen",
-        price: 1500,
-        desc: "21.0 cm x 29.7 cm"
-      }
+  }
 ];
 
 const Sketch = () => {
